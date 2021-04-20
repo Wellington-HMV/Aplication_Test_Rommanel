@@ -1,0 +1,12 @@
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\bin\Debug\net5.0\Rommanel.Entities.deps.json
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\bin\Debug\net5.0\Rommanel.Entities.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\bin\Debug\net5.0\ref\Rommanel.Entities.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\bin\Debug\net5.0\Rommanel.Entities.pdb
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\Rommanel.Entities.csprojAssemblyReference.cache
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\Rommanel.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\Rommanel.Entities.AssemblyInfoInputs.cache
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\Rommanel.Entities.AssemblyInfo.cs
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\Rommanel.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\Rommanel.Entities.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\ref\Rommanel.Entities.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Entities\obj\Debug\net5.0\Rommanel.Entities.pdb

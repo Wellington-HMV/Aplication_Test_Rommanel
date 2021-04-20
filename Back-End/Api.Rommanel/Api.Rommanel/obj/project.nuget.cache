@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WmVQAq/EHxkgECUTeKMgxWGlWYMB3PliapOcWIkkrl31Z2pjfQM6jMfB3jIgQAVofw5cThgKQ0zoEavftsiFCQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Wellington\\Desktop\\Rommanel Test\\Back-End\\Api.Rommanel\\Api.Rommanel\\Api.Rommanel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Wellington\\.nuget\\packages\\fluentvalidation\\10.0.4\\fluentvalidation.10.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

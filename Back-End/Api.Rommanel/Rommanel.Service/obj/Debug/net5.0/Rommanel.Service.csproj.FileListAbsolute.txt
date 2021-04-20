@@ -1,0 +1,17 @@
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.csprojAssemblyReference.cache
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.AssemblyInfoInputs.cache
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.AssemblyInfo.cs
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.csproj.CoreCompileInputs.cache
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\Rommanel.Service.deps.json
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\Rommanel.Service.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\ref\Rommanel.Service.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\Rommanel.Service.pdb
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\Rommanel.Entities.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\Rommanel.Repository.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\Rommanel.Entities.pdb
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\bin\Debug\net5.0\Rommanel.Repository.pdb
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.csproj.CopyComplete
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\ref\Rommanel.Service.dll
+C:\Users\Wellington\Desktop\Rommanel Test\Back-End\Api.Rommanel\Rommanel.Service\obj\Debug\net5.0\Rommanel.Service.pdb
