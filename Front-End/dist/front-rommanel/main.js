@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignInComponent", function() { return SignInComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _raw_loader_signin_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./signin.component.html */ "XinC");
-/* harmony import */ var _signin_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./signin.component.scss */ "Soaf");
+/* harmony import */ var _signin_component_sass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./signin.component.sass */ "SDiX");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
@@ -67,7 +67,7 @@ SignInComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: 'tw-signin',
         template: _raw_loader_signin_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        styles: [_signin_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+        styles: [_signin_component_sass__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })
 ], SignInComponent);
 
@@ -82,7 +82,7 @@ SignInComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Wellington\Desktop\Rommanel Test\Front-End\front-rommanel\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\Wellington\Desktop\Rommanel Test\Aplication_Test_Rommanel\Front-End\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -169,7 +169,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var src_core_plataform_detector_validators_age_validade__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/core/plataform-detector/validators/age-validade */ "LOhk");
-/* harmony import */ var _core_plataform_detector_platform_detector_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../core/plataform-detector/platform-detector.service */ "dOFS");
+/* harmony import */ var src_core_services_register_register_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/core/services/register/register.service */ "twUe");
+/* harmony import */ var _core_plataform_detector_platform_detector_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../core/plataform-detector/platform-detector.service */ "dOFS");
+
 
 
 
@@ -179,37 +181,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let RegisterComponent = class RegisterComponent {
-    constructor(router, formBuilder, platformDetectorService) {
+    constructor(router, formBuilder, platformDetectorService, _registerService) {
         this.router = router;
         this.formBuilder = formBuilder;
         this.platformDetectorService = platformDetectorService;
+        this._registerService = _registerService;
     }
     ngOnInit() {
         this.createForm();
         0;
         this.platformDetectorService.isPlatformBrowser() &&
-            this.emailInput.nativeElement.focus();
+            this.nameInput.nativeElement.focus();
+    }
+    backLogin() {
+        this.router.navigate(['']);
     }
     createForm() {
         this.registerForm = this.formBuilder.group({
-            name: ['', [
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required,
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(5),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(100),
-                ]],
-            cpf_cnpj: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
-            birth_date: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, src_core_plataform_detector_validators_age_validade__WEBPACK_IMPORTED_MODULE_6__["ageValidator"]]],
-            email: ['',
-                [
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email,
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(5),
-                    _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(100)
-                ]],
-            contact: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
+            register: this.formBuilder.group({
+                name: ['', [
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required,
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(5),
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(100),
+                    ]],
+                cpfCnpj: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
+                birthDate: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, src_core_plataform_detector_validators_age_validade__WEBPACK_IMPORTED_MODULE_6__["ageValidator"]]],
+                email: ['',
+                    [
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email,
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(5),
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(100)
+                    ]],
+                contact: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
+            }),
             address: this.formBuilder.group({
                 cep: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
                 road: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
-                number: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
+                number: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(10)]],
                 district: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
                 city: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
                 state: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
@@ -217,15 +225,19 @@ let RegisterComponent = class RegisterComponent {
         });
     }
     register() {
+        this._registerService.createRegister(this.registerForm.getRawValue()).subscribe(resp => {
+            this.router.navigate(['']);
+        });
     }
 };
 RegisterComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
-    { type: _core_plataform_detector_platform_detector_service__WEBPACK_IMPORTED_MODULE_7__["PlatformDetectorService"] }
+    { type: _core_plataform_detector_platform_detector_service__WEBPACK_IMPORTED_MODULE_8__["PlatformDetectorService"] },
+    { type: src_core_services_register_register_service__WEBPACK_IMPORTED_MODULE_7__["RegisterService"] }
 ];
 RegisterComponent.propDecorators = {
-    emailInput: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['emailInput', { static: true },] }]
+    nameInput: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ['nameInput', { static: true },] }]
 };
 RegisterComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -277,7 +289,7 @@ const environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>logged works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"card\">\n    <mat-card-content class=\"container\">\n        <table class=\"table table-striped table-hover\">\n            <thead>\n                <tr>\n                  <th scope=\"col\">#</th>\n                  <th scope=\"col\">Cpf/Cnpj</th>\n                  <th scope=\"col\">Nome</th>\n                  <th scope=\"col\">Email</th>\n                  <th scope=\"col\">Cidade</th>\n                  <th scope=\"col\">Estado</th>\n                  <th scope=\"col\">Ação</th>\n                </tr>\n              </thead>\n\n              <tbody *ngFor=\"let item of $registers | async; let i = index\">\n                <th scope=\"row\">{{i+1}}</th>\n                <td>{{item.register.cpfCnpj}}</td>\n                <td>{{item.register.name}}</td>\n                <td>{{item.register.email}}</td>\n                <td>{{item.address.city}}</td>\n                <td>{{item.address.state}}</td>\n                <td><mat-icon (click)=\"delete(item.register.id)\">delete</mat-icon></td>\n              </tbody>\n          </table>\n    </mat-card-content>\n</mat-card>");
 
 /***/ }),
 
@@ -295,16 +307,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_logged_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./logged.component.html */ "J/6F");
 /* harmony import */ var _logged_component_sass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logged.component.sass */ "lUAU");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_core_services_register_register_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/core/services/register/register.service */ "twUe");
+
 
 
 
 
 let LoggedComponent = class LoggedComponent {
-    constructor() { }
+    constructor(_regiterService) {
+        this._regiterService = _regiterService;
+    }
     ngOnInit() {
+        this.$registers = this._regiterService.geAll();
+    }
+    delete(id) {
+        this._regiterService.deleteRegister(id).subscribe(() => location.reload(), err => alert("Não possível deletar o registro!"));
     }
 };
-LoggedComponent.ctorParameters = () => [];
+LoggedComponent.ctorParameters = () => [
+    { type: src_core_services_register_register_service__WEBPACK_IMPORTED_MODULE_4__["RegisterService"] }
+];
 LoggedComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: 'app-logged',
@@ -328,7 +350,6 @@ LoggedComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ageValidator", function() { return ageValidator; });
 function ageValidator(value) {
-    debugger;
     let date = value.value;
     let day;
     let mounth;
@@ -380,7 +401,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"card\">\n  <mat-card-content>\n    <form [formGroup]=\"registerForm\" class=\"form\" (submit)=\"register()\">\n\n      <mat-form-field class=\"full-width\">\n        <mat-label>Nome/Razão Social</mat-label>\n        <input matInput formControlName=\"name\" placeholder=\"Digite...\" maxlength=\"200\">\n        <mat-error *ngIf=\"registerForm.get('name').errors?.required\">\n          Este Campo é <strong>Obrigatório</strong>\n        </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"full-width\">\n        <mat-label>CPF/CNPJ</mat-label>\n        <input matInput formControlName=\"cpf_cnpj\" placeholder=\"Digite...\" mask=\"000.000.000-00 || 000.000.000/0000-00\">\n        <mat-error *ngIf=\"registerForm.get('cpf_cnpj').errors?.required\">\n          Este Campo é <strong>Obrigatório</strong>\n        </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"full-width\">\n        <mat-label>Data Nascimento</mat-label>\n        <input matInput formControlName=\"birth_date\" placeholder=\"Digite...\" mask=\"00/00/0000\">\n        <mat-error *ngIf=\"registerForm.get('birth_date').errors?.required\">\n          Data Nascimento é <strong>Obrigatório</strong>\n        </mat-error>\n        <mat-error *ngIf=\"registerForm.get('birth_date').errors?.older\">\n          Não é possível cadastar <strong>menor de 18 anos</strong>\n        </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"full-width\">\n        <mat-label>Telefone</mat-label>\n        <input matInput formControlName=\"contact\" placeholder=\"Digite...\" mask=\"(00) 0000-0000 || (00) 0 0000-0000\">\n        <mat-error *ngIf=\"registerForm.get('contact').errors?.required\">\n          Email é <strong>Obrigatório</strong>\n        </mat-error>\n      </mat-form-field>\n\n      <mat-form-field class=\"full-width\">\n        <mat-label>Email</mat-label>\n        <input #emailInput matInput formControlName=\"email\" placeholder=\"Ex. teamwork@example.com\" maxlength=\"100\">\n        <mat-error *ngIf=\"registerForm.get('email').errors?.required\">\n          Email é <strong>Obrigatório</strong>\n        </mat-error>\n      </mat-form-field>\n\n      <div formGroupName=\"address\">\n\n      </div>\n\n      <button mat-raised-button [disabled]=\"registerForm.invalid\" type=\"submit\" class=\"\">\n        <mat-icon title=\"clique para realizar o login\">login</mat-icon> Login\n      </button>\n    </form>\n  </mat-card-content>\n</mat-card>");
+/* harmony default export */ __webpack_exports__["default"] = ("<img src=\"../../assets/img/logo-01.png\" class=\"logo\" alt=\"Logo\">\n<mat-card class=\"card\">\n  <mat-card-content class=\"container\">\n    <form [formGroup]=\"registerForm\" class=\"\" (submit)=\"register()\">\n\n      <div formGroupName=\"register\">\n        <div class=\"row\">\n          <h3 class=\"col\">Dados Cliente <mat-divider>\n            </mat-divider>\n          </h3>\n\n        </div>\n        <div class=\"row\">\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Nome/Razão Social</mat-label>\n              <input #nameInput matInput formControlName=\"name\" placeholder=\"Digite...\" maxlength=\"200\">\n              <mat-error *ngIf=\"registerForm.get('register.name').errors?.required\">\n                Este Campo é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>CPF/CNPJ</mat-label>\n              <input matInput formControlName=\"cpfCnpj\" placeholder=\"Digite...\"\n                mask=\"000.000.000-00 || 000.000.000/0000-00\">\n              <mat-error *ngIf=\"registerForm.get('register.cpfCnpj').errors?.required\">\n                Este Campo é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n        </div>\n\n        <div class=\"row\">\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Email</mat-label>\n              <input matInput formControlName=\"email\" placeholder=\"Ex. teamwork@example.com\" maxlength=\"100\">\n              <mat-error *ngIf=\"registerForm.get('register.email').errors?.required\">\n                Email é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Telefone</mat-label>\n              <input matInput formControlName=\"contact\" placeholder=\"Digite...\"\n                mask=\"(00) 0000-0000 || (00) 0 0000-0000\">\n              <mat-error *ngIf=\"registerForm.get('register.contact').errors?.required\">\n                Email é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Data Nascimento</mat-label>\n              <input matInput formControlName=\"birthDate\" placeholder=\"Digite...\" mask=\"00/00/0000\">\n              <mat-error *ngIf=\"registerForm.get('register.birthDate').errors?.required\">\n                Data Nascimento é <strong>Obrigatório</strong>\n              </mat-error>\n              <mat-error *ngIf=\"registerForm.get('register.birthDate').errors?.older\">\n                Não é possível cadastar <strong>menor de 18 anos</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n        </div>\n\n      </div>\n\n      <div formGroupName=\"address\">\n        <div class=\"row\">\n          <h3 class=\"col\">Endereço <mat-divider>\n            </mat-divider>\n          </h3>\n        </div>\n\n        <div class=\"row\">\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Cep</mat-label>\n              <input matInput formControlName=\"cep\" placeholder=\"13272/000\" mask=\"00000/000\">\n              <mat-error *ngIf=\"registerForm.get('address.cep').errors?.required\">\n                Cep é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Rua</mat-label>\n              <input matInput formControlName=\"road\" placeholder=\"Digite...\" maxlength=\"100\">\n              <mat-error *ngIf=\"registerForm.get('address.road').errors?.required\">\n                Rua é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Número</mat-label>\n              <input matInput formControlName=\"number\" placeholder=\"Digite...\" maxlength=\"10\" mask=\"0*\">\n              <mat-error *ngIf=\"registerForm.get('address.number').errors?.required\">\n                Número é <strong>Obrigatório</strong>\n              </mat-error>\n              <mat-error *ngIf=\"registerForm.get('address.number').errors?.maxLength\">\n                <strong>Máximo 10 digitos</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n        </div>\n\n        <div class=\"row\">\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Bairro</mat-label>\n              <input matInput formControlName=\"district\" placeholder=\"Bairro...\" maxlength=\"100\">\n              <mat-error *ngIf=\"registerForm.get('address.district').errors?.required\">\n                Bairro é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Cidade</mat-label>\n              <input matInput formControlName=\"city\" placeholder=\"Cidade...\" maxlength=\"100\">\n              <mat-error *ngIf=\"registerForm.get('address.city').errors?.required\">\n                Cidade é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n          <div class=\"col\">\n            <mat-form-field>\n              <mat-label>Estado</mat-label>\n              <input matInput formControlName=\"state\" placeholder=\"Estado...\" maxlength=\"100\">\n              <mat-error *ngIf=\"registerForm.get('address.state').errors?.required\">\n                Estado é <strong>Obrigatório</strong>\n              </mat-error>\n            </mat-form-field>\n          </div>\n\n        </div>\n\n      </div>\n\n      <div class=\"row\">\n\n        <div class=\"col\">\n          <button mat-raised-button [disabled]=\"registerForm.invalid\" type=\"submit\" class=\"\">\n            <mat-icon title=\"clique para realizar o login\">save_alt</mat-icon> Criar\n          </button>\n        </div>\n\n        <div class=\"col\">\n          <button mat-raised-button type=\"buttom\" class=\"\" (click)=\"backLogin()\">\n            <mat-icon title=\"clique para realizar o login\">keyboard_arrow_left</mat-icon> Voltar\n          </button>\n        </div>\n\n      </div>\n\n    </form>\n  </mat-card-content>\n</mat-card>");
 
 /***/ }),
 
@@ -398,10 +419,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _logged_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logged.component */ "LOZu");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ "qFsG");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/select */ "d3UM");
+/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/slider */ "5RNC");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var ngx_mask__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-mask */ "tmjD");
 
 
 
 
+
+
+
+
+
+
+
+
+const maskConfig = {
+    validation: false,
+};
 let LoggedModule = class LoggedModule {
 };
 LoggedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -409,7 +449,15 @@ LoggedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         declarations: [_logged_component__WEBPACK_IMPORTED_MODULE_3__["LoggedComponent"]],
         exports: [_logged_component__WEBPACK_IMPORTED_MODULE_3__["LoggedComponent"]],
         imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"],
+            _angular_material_input__WEBPACK_IMPORTED_MODULE_7__["MatInputModule"],
+            _angular_material_slider__WEBPACK_IMPORTED_MODULE_9__["MatSliderModule"],
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_8__["MatSelectModule"],
+            _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"],
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"],
+            _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"],
+            ngx_mask__WEBPACK_IMPORTED_MODULE_11__["NgxMaskModule"].forRoot(maskConfig),
         ]
     })
 ], LoggedModule);
@@ -418,16 +466,16 @@ LoggedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
-/***/ "Soaf":
+/***/ "SDiX":
 /*!**********************************************!*\
-  !*** ./src/app/signin/signin.component.scss ***!
+  !*** ./src/app/signin/signin.component.sass ***!
   \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".form {\n  min-width: 150px;\n  width: 100%;\n}\n\n.card {\n  position: fixed;\n  top: 5vh;\n  right: 3vw;\n  background-color: rgba(255, 255, 255, 0.712);\n}\n\n.full-width {\n  width: 100%;\n}\n\n.color-font {\n  color: white;\n}\n\n.bk-none {\n  background-color: rgba(14, 65, 109, 0.288);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lnbmluL3NpZ25pbi5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBRUEsV0FBQTtBQUFGOztBQUdBO0VBQ0UsZUFBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0VBQ0EsNENBQUE7QUFBRjs7QUFHQTtFQUNFLFdBQUE7QUFBRjs7QUFHQTtFQUNFLFlBQUE7QUFBRjs7QUFHQTtFQUNFLDBDQUFBO0FBQUYiLCJmaWxlIjoic3JjL2FwcC9zaWduaW4vc2lnbmluLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0ge1xyXG4gIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgLy9tYXgtd2lkdGg6IDUwMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uY2FyZHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgdG9wOiA1dmg7XHJcbiAgcmlnaHQ6IDN2dztcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNzEyKTtcclxufVxyXG5cclxuLmZ1bGwtd2lkdGgge1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uY29sb3ItZm9udCB7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG4uYmstbm9uZSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgxNCwgNjUsIDEwOSwgMC4yODgpO1xyXG59XHJcbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".form {\n  min-width: 150px;\n  width: 100%;\n}\n\n.card {\n  position: fixed;\n  top: 5vh;\n  right: 3vw;\n  background-color: rgba(255, 255, 255, 0.712);\n}\n\n.full-width {\n  width: 100%;\n}\n\n.color-font {\n  color: #442a39;\n}\n\n.bk-none {\n  background-color: rgba(68, 42, 57, 0.5);\n}\n\n.logo {\n  width: 40vw;\n  margin: 5%;\n  max-width: 600px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2lnbmluL3NpZ25pbi5jb21wb25lbnQuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsV0FBQTtBQUNGOztBQUVBO0VBQ0UsZUFBQTtFQUNBLFFBQUE7RUFDQSxVQUFBO0VBQ0EsNENBQUE7QUFDRjs7QUFFQTtFQUNFLFdBQUE7QUFDRjs7QUFFQTtFQUNFLGNBQUE7QUFDRjs7QUFFQTtFQUNFLHVDQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxXQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0FBRUYiLCJmaWxlIjoic3JjL2FwcC9zaWduaW4vc2lnbmluLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0gXHJcbiAgbWluLXdpZHRoOiAxNTBweFxyXG4gIHdpZHRoOiAxMDAlXHJcblxyXG5cclxuLmNhcmRcclxuICBwb3NpdGlvbjogZml4ZWRcclxuICB0b3A6IDV2aFxyXG4gIHJpZ2h0OiAzdndcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNzEyKVxyXG5cclxuXHJcbi5mdWxsLXdpZHRoIFxyXG4gIHdpZHRoOiAxMDAlXHJcblxyXG5cclxuLmNvbG9yLWZvbnQgXHJcbiAgY29sb3I6IHJnYig2OCA0MiA1NylcclxuXHJcblxyXG4uYmstbm9uZSBcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoNjggNDIgNTcvNTAlKVxyXG5cclxuLmxvZ29cclxuICB3aWR0aDo0MHZ3XHJcbiAgbWFyZ2luOiA1JVxyXG4gIG1heC13aWR0aDogNjAwcHgiXX0= */");
 
 /***/ }),
 
@@ -450,9 +498,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor() {
-        this.title = 'front-rommanel';
-    }
 };
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -488,7 +533,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-card class=\"card\">\n  <mat-card-content>\n    <form [formGroup]=\"loginForm\" class=\"container\" (submit)=\"login()\">\n\n      <div class=\"row\">\n        <mat-form-field class=\"col\">\n          <mat-label>Email</mat-label>\n          <input #emailInput matInput formControlName=\"email\" placeholder=\"Ex. teamwork@example.com\">\n          <mat-error *ngIf=\"loginForm.get('email').errors?.required\">\n            Email é <strong>Obrigatório</strong>\n          </mat-error>\n          <mat-error *ngIf=\"loginForm.get('email').errors?.email\">\n            Email é <strong>Inválido</strong>\n          </mat-error>\n        </mat-form-field>\n\n        <mat-form-field class=\"col\">\n          <mat-label>Cpf / Cnpj</mat-label>\n          <input matInput formControlName=\"cpfCnpj\" placeholder=\"Digite seu CNPJ ou CPF\"\n          mask=\"000.000.000-00 || 000.000.000/0000-00\">\n          <mat-error *ngIf=\"loginForm.get('cpfCnpj').errors?.required\">\n            CPF ou CNPJ é <strong>Obrigatório</strong>\n          </mat-error>\n        </mat-form-field>\n      </div>\n      <div>\n        <button mat-raised-button [disabled]=\"loginForm.invalid\" type=\"submit\" class=\"col tw-blue color-font\">\n          <mat-icon title=\"clique para realizar o login\">login</mat-icon> Login\n        </button>\n        <button mat-raised-button class=\"col mt-3 bk-none color-font\" type=\"button\" (click)=\"create()\">\n          <mat-icon title=\"clique para criar uma conta\">login</mat-icon> Criar Conta\n        </button>\n      </div>\n    </form>\n  </mat-card-content>\n</mat-card>");
+/* harmony default export */ __webpack_exports__["default"] = ("<img src=\"../../assets/img/logo-01.png\" class=\"logo\" alt=\"Logo\">\n<mat-card class=\"card\">\n  <mat-card-content>\n    <form [formGroup]=\"loginForm\" class=\"form\" (submit)=\"login()\">\n\n      <div>\n        <mat-form-field class=\"full-width\">\n          <mat-label>Email</mat-label>\n          <input #emailInput matInput formControlName=\"email\" placeholder=\"Ex. rommanel@example.com\">\n          <mat-error *ngIf=\"loginForm.get('email').errors?.required\">\n            Email é <strong>Obrigatório</strong>\n          </mat-error>\n          <mat-error *ngIf=\"loginForm.get('email').errors?.email\">\n            Email é <strong>Inválido</strong>\n          </mat-error>\n        </mat-form-field>\n\n        <mat-form-field class=\"full-width\">\n          <mat-label>Cpf / Cnpj</mat-label>\n          <input matInput formControlName=\"cpfCnpj\" placeholder=\"Digite seu CNPJ ou CPF\"\n          mask=\"000.000.000-00 || 000.000.000/0000-00\">\n          <mat-error *ngIf=\"loginForm.get('cpfCnpj').errors?.required\">\n            CPF ou CNPJ é <strong>Obrigatório</strong>\n          </mat-error>\n        </mat-form-field>\n      </div>\n      <div>\n        <button mat-raised-button [disabled]=\"loginForm.invalid\" type=\"submit\" class=\"full-width color-font\">\n          <mat-icon title=\"clique para realizar o login\">login</mat-icon> Login\n        </button>\n        <button mat-raised-button class=\"full-width mt-3 bk-none color-font\" type=\"button\" (click)=\"create()\">\n          <mat-icon title=\"clique para criar uma conta\">login</mat-icon> Criar Conta\n        </button>\n      </div>\n    </form>\n  </mat-card-content>\n</mat-card>");
 
 /***/ }),
 
@@ -542,10 +587,10 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"],
-            ngx_mask__WEBPACK_IMPORTED_MODULE_6__["NgxMaskModule"].forRoot(),
             _register_register_module__WEBPACK_IMPORTED_MODULE_9__["RegisterModule"],
             _signin_signin_module__WEBPACK_IMPORTED_MODULE_10__["SignInModule"],
-            _logged_logged_module__WEBPACK_IMPORTED_MODULE_11__["LoggedModule"]
+            _logged_logged_module__WEBPACK_IMPORTED_MODULE_11__["LoggedModule"],
+            ngx_mask__WEBPACK_IMPORTED_MODULE_6__["NgxMaskModule"].forRoot(),
         ],
         providers: [],
         schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["CUSTOM_ELEMENTS_SCHEMA"]],
@@ -566,7 +611,7 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("form {\n  min-width: 150px;\n  width: 100%;\n}\n\n.card {\n  position: fixed;\n  top: 5vh;\n  right: 3vw;\n  background-color: rgba(255, 255, 255, 0.712);\n}\n\n.full-width {\n  width: 100%;\n}\n\n.color-font {\n  color: white;\n}\n\n.bk-none {\n  background-color: rgba(14, 65, 109, 0.288);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtFQUNBLFdBQUE7QUFDSjs7QUFDQTtFQUNJLGVBQUE7RUFDQSxRQUFBO0VBQ0EsVUFBQTtFQUNBLDRDQUFBO0FBRUo7O0FBQUE7RUFDSSxXQUFBO0FBR0o7O0FBREE7RUFDSSxZQUFBO0FBSUo7O0FBRkE7RUFDSSwwQ0FBQTtBQUtKIiwiZmlsZSI6InNyYy9hcHAvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LnNhc3MiLCJzb3VyY2VzQ29udGVudCI6WyJmb3JtXHJcbiAgICBtaW4td2lkdGg6IDE1MHB4XHJcbiAgICB3aWR0aDogMTAwJVxyXG5cclxuLmNhcmRcclxuICAgIHBvc2l0aW9uOiBmaXhlZFxyXG4gICAgdG9wOiA1dmhcclxuICAgIHJpZ2h0OiAzdndcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC43MTIpXHJcblxyXG4uZnVsbC13aWR0aFxyXG4gICAgd2lkdGg6IDEwMCVcclxuXHJcbi5jb2xvci1mb250XHJcbiAgICBjb2xvcjogd2hpdGVcclxuXHJcbi5iay1ub25lXHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDE0LCA2NSwgMTA5LCAwLjI4OClcclxuIl19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".card {\n  position: fixed;\n  top: 5vh;\n  right: 12vw;\n  left: 12vw;\n  background-color: rgba(255, 255, 255, 0.712);\n}\n\nmat-form-field {\n  width: 100%;\n}\n\n.color-font {\n  color: white;\n}\n\n.bk-none {\n  background-color: rgba(14, 65, 109, 0.288);\n}\n\n.logo {\n  width: 40vw;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 30%;\n  max-width: 600px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7RUFDSSxlQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7RUFDQSxVQUFBO0VBQ0EsNENBQUE7QUFBSjs7QUFFQTtFQUNJLFdBQUE7QUFDSjs7QUFDQTtFQUNJLFlBQUE7QUFFSjs7QUFBQTtFQUNJLDBDQUFBO0FBR0o7O0FBREE7RUFDSSxXQUFBO0VBQ0EsY0FBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUFJSiIsImZpbGUiOiJzcmMvYXBwL3JlZ2lzdGVyL3JlZ2lzdGVyLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi5jYXJkXHJcbiAgICBwb3NpdGlvbjogZml4ZWRcclxuICAgIHRvcDogNXZoXHJcbiAgICByaWdodDogMTJ2d1xyXG4gICAgbGVmdDogMTJ2d1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcxMilcclxuXHJcbm1hdC1mb3JtLWZpZWxkXHJcbiAgICB3aWR0aDogMTAwJVxyXG5cclxuLmNvbG9yLWZvbnRcclxuICAgIGNvbG9yOiB3aGl0ZVxyXG5cclxuLmJrLW5vbmVcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMTQsIDY1LCAxMDksIDAuMjg4KVxyXG5cclxuLmxvZ29cclxuICAgIHdpZHRoOiA0MHZ3XHJcbiAgICBkaXNwbGF5OiBibG9ja1xyXG4gICAgbWFyZ2luLWxlZnQ6IGF1dG9cclxuICAgIG1hcmdpbi1yaWdodDogYXV0b1xyXG4gICAgbWFyZ2luLXRvcDogMzAlXHJcbiAgICBtYXgtd2lkdGg6IDYwMHB4XHJcbiJdfQ== */");
 
 /***/ }),
 
@@ -614,7 +659,7 @@ PlatformDetectorService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2dlZC9sb2dnZWQuY29tcG9uZW50LnNhc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".card {\n  position: fixed;\n  top: 5vh;\n  right: 12vw;\n  left: 12vw;\n  background-color: rgba(255, 255, 255, 0.712);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9nZ2VkL2xvZ2dlZC5jb21wb25lbnQuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGVBQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtFQUNBLFVBQUE7RUFDQSw0Q0FBQTtBQUNKIiwiZmlsZSI6InNyYy9hcHAvbG9nZ2VkL2xvZ2dlZC5jb21wb25lbnQuc2FzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkXHJcbiAgICBwb3NpdGlvbjogZml4ZWRcclxuICAgIHRvcDogNXZoXHJcbiAgICByaWdodDogMTJ2d1xyXG4gICAgbGVmdDogMTJ2d1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcxMikiXX0= */");
 
 /***/ }),
 
@@ -640,14 +685,17 @@ let RegisterService = class RegisterService {
     constructor(http) {
         this.http = http;
     }
+    geAll() {
+        return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}Register/GetAll`);
+    }
     getRegister(value) {
-        return this.http.get(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}register/${value}`);
+        return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}Register/GetRegistry`, value);
     }
     createRegister(value) {
-        return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}register/`, value);
+        return this.http.post(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}Register/Create`, value);
     }
     deleteRegister(value) {
-        return this.http.delete(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}register/${value}`);
+        return this.http.delete(`${src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl}Register/Delete/${value}`);
     }
 };
 RegisterService.ctorParameters = () => [
@@ -733,7 +781,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
 /* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
-/* harmony import */ var ngx_mask__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-mask */ "tmjD");
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/divider */ "f0Cb");
+/* harmony import */ var ngx_mask__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-mask */ "tmjD");
+
 
 
 
@@ -767,7 +817,8 @@ RegisterModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"],
             _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"],
             _angular_material_card__WEBPACK_IMPORTED_MODULE_11__["MatCardModule"],
-            ngx_mask__WEBPACK_IMPORTED_MODULE_12__["NgxMaskModule"].forRoot(maskConfig),
+            _angular_material_divider__WEBPACK_IMPORTED_MODULE_12__["MatDividerModule"],
+            ngx_mask__WEBPACK_IMPORTED_MODULE_13__["NgxMaskModule"].forRoot(maskConfig),
         ]
     })
 ], RegisterModule);

@@ -1,0 +1,176 @@
+<img src="../../assets/img/logo-01.png" class="logo" alt="Logo">
+<mat-card class="card">
+  <mat-card-content class="container">
+    <form [formGroup]="registerForm" class="" (submit)="register()">
+
+      <div formGroupName="register">
+        <div class="row">
+          <h3 class="col">Dados Cliente <mat-divider>
+            </mat-divider>
+          </h3>
+
+        </div>
+        <div class="row">
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Nome/Razão Social</mat-label>
+              <input #nameInput matInput formControlName="name" placeholder="Digite..." maxlength="200">
+              <mat-error *ngIf="registerForm.get('register.name').errors?.required">
+                Este Campo é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>CPF/CNPJ</mat-label>
+              <input matInput formControlName="cpfCnpj" placeholder="Digite..."
+                mask="000.000.000-00 || 000.000.000/0000-00">
+              <mat-error *ngIf="registerForm.get('register.cpfCnpj').errors?.required">
+                Este Campo é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" placeholder="Ex. teamwork@example.com" maxlength="100">
+              <mat-error *ngIf="registerForm.get('register.email').errors?.required">
+                Email é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Telefone</mat-label>
+              <input matInput formControlName="contact" placeholder="Digite..."
+                mask="(00) 0000-0000 || (00) 0 0000-0000">
+              <mat-error *ngIf="registerForm.get('register.contact').errors?.required">
+                Email é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Data Nascimento</mat-label>
+              <input matInput formControlName="birthDate" placeholder="Digite..." mask="00/00/0000">
+              <mat-error *ngIf="registerForm.get('register.birthDate').errors?.required">
+                Data Nascimento é <strong>Obrigatório</strong>
+              </mat-error>
+              <mat-error *ngIf="registerForm.get('register.birthDate').errors?.older">
+                Não é possível cadastar <strong>menor de 18 anos</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div formGroupName="address">
+        <div class="row">
+          <h3 class="col">Endereço <mat-divider>
+            </mat-divider>
+          </h3>
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Cep</mat-label>
+              <input matInput formControlName="cep" placeholder="13272/000" mask="00000/000">
+              <mat-error *ngIf="registerForm.get('address.cep').errors?.required">
+                Cep é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Rua</mat-label>
+              <input matInput formControlName="road" placeholder="Digite..." maxlength="100">
+              <mat-error *ngIf="registerForm.get('address.road').errors?.required">
+                Rua é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Número</mat-label>
+              <input matInput formControlName="number" placeholder="Digite..." maxlength="10" mask="0*">
+              <mat-error *ngIf="registerForm.get('address.number').errors?.required">
+                Número é <strong>Obrigatório</strong>
+              </mat-error>
+              <mat-error *ngIf="registerForm.get('address.number').errors?.maxLength">
+                <strong>Máximo 10 digitos</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Bairro</mat-label>
+              <input matInput formControlName="district" placeholder="Bairro..." maxlength="100">
+              <mat-error *ngIf="registerForm.get('address.district').errors?.required">
+                Bairro é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Cidade</mat-label>
+              <input matInput formControlName="city" placeholder="Cidade..." maxlength="100">
+              <mat-error *ngIf="registerForm.get('address.city').errors?.required">
+                Cidade é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Estado</mat-label>
+              <input matInput formControlName="state" placeholder="Estado..." maxlength="100">
+              <mat-error *ngIf="registerForm.get('address.state').errors?.required">
+                Estado é <strong>Obrigatório</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <button mat-raised-button [disabled]="registerForm.invalid" type="submit" class="">
+            <mat-icon title="clique para realizar o login">save_alt</mat-icon> Criar
+          </button>
+        </div>
+
+        <div class="col">
+          <button mat-raised-button type="buttom" class="" (click)="backLogin()">
+            <mat-icon title="clique para realizar o login">keyboard_arrow_left</mat-icon> Voltar
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

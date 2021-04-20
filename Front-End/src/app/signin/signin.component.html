@@ -1,0 +1,37 @@
+<img src="../../assets/img/logo-01.png" class="logo" alt="Logo">
+<mat-card class="card">
+  <mat-card-content>
+    <form [formGroup]="loginForm" class="form" (submit)="login()">
+
+      <div>
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input #emailInput matInput formControlName="email" placeholder="Ex. rommanel@example.com">
+          <mat-error *ngIf="loginForm.get('email').errors?.required">
+            Email é <strong>Obrigatório</strong>
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email').errors?.email">
+            Email é <strong>Inválido</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Cpf / Cnpj</mat-label>
+          <input matInput formControlName="cpfCnpj" placeholder="Digite seu CNPJ ou CPF"
+          mask="000.000.000-00 || 000.000.000/0000-00">
+          <mat-error *ngIf="loginForm.get('cpfCnpj').errors?.required">
+            CPF ou CNPJ é <strong>Obrigatório</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button [disabled]="loginForm.invalid" type="submit" class="full-width color-font">
+          <mat-icon title="clique para realizar o login">login</mat-icon> Login
+        </button>
+        <button mat-raised-button class="full-width mt-3 bk-none color-font" type="button" (click)="create()">
+          <mat-icon title="clique para criar uma conta">login</mat-icon> Criar Conta
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
